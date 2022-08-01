@@ -1,0 +1,24 @@
+
+<mat-card class ="user-details" *ngIf="userDetails">
+   <mat-card-title >
+    {{userDetails.id}} - {{userDetails.name}} {{userDetails.surName}}
+   </mat-card-title>  
+</mat-card>
+
+<div  *ngIf="userDetails.accountList">
+<div *ngFor="let account of userDetails.accountList">
+   
+    <mat-card class="list-users" role="listitem">    
+        <mat-card-title><span class="username">Account ID: {{account.id}} Balance: {{account.initialcredit}}</span></mat-card-title>  
+        <div *ngFor="let tr of account.transactionList">
+        <mat-card-content>
+            Transaction ID: {{tr.id}} |
+            Amount: {{tr.amount}} |
+            Date: {{tr.transactionDate}}
+        </mat-card-content>
+    </div>
+      </mat-card>
+    </div>
+
+
+

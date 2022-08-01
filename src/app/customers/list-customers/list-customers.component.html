@@ -1,0 +1,9 @@
+<h1 *ngIf="listUsers">  Displaying {{listUsers.length}} Customer </h1>
+<div class="main-content">
+<mat-card class="list-users" role="listitem" *ngFor="let user of listUsers">    
+    <mat-card-title><span class="username">{{user.name}} {{user.surName}}</span></mat-card-title>  
+    <mat-card-actions>
+        <a class="action-link" [routerLink]="['/customers/view',user.id]">Details</a>
+    </mat-card-actions>
+  </mat-card>
+</div>
